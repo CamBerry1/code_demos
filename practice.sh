@@ -22,4 +22,4 @@ setup=("$weap" "$arena" "$opp")
 
 echo "$username is fighting "${setup[2]}" in "${setup[1]}" with a "${setup[0]}""
 
-echo "Good Job!"
+echo "$username won the fight against "${setup[2]}"! Well done!"
