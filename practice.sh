@@ -1,21 +1,26 @@
 #!/bin/bash
 
 echo "What is your name?"
-
 read username
 
 echo "Welcome to the Thunderdome, $username!"
 
 echo "Choose your weapon!"
-
+valid_weaps=("knife" "pistol" "shortsword" "bare hands")
+echo ${valid_weaps[@]}
 read weap
 
-echo "Choose your arena!"
+while [[ ! " ${valid_weaps[@]} " =~ " ${weap} " ]]; do
+    echo "Invalid option."
+    sleep 1
+    echo "Choose your weapon!"
+    read weap
+done
 
+echo "Choose your arena!"
 read arena
 
 echo "Choose your opponent!"
-
 read opp
 
 setup=("$weap" "$arena" "$opp")
